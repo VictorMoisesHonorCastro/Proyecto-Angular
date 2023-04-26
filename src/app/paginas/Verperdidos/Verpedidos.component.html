@@ -1,0 +1,51 @@
+<div id="menu">
+        <img alt="Nike Logo" src="assets/imagenes/Logo.png">
+        <hr>
+        <!-- Boton para volver a la tienda -->
+        <button routerLink="../tienda" routerLinkActive="active" titulo="TIENDA"><img
+                        src="assets/imagenes/logo_tienda.png">
+                <p>TIENDA</p>
+        </button>
+        <!-- Boton para que el usuario pueda ver su perfil -->
+        <button routerLink="../perfil" routerLinkActive="active" titulo="PERFIL"><img src="assets/imagenes/perfil.png">
+                <p>PERFIL</p>
+        </button>
+        <!-- Boton para cerrar sesion -->
+        <button title="LOGOUT" (click)="logout()"><img src="assets/imagenes/logout.png">
+                <p>LOG OUT</p>
+        </button>
+</div>
+
+<ng-container *ngIf="element == false">
+        <table id="carrito">
+
+                <tr>
+                        <th *ngIf="info.rol == 'admin'">Usuario:</th>
+                        <th>Producto:</th>
+                        <th>Punto de Entrega:</th>
+                        <th>Precio:</th>
+                        <th>Metodo de Pago:</th>
+                        <th>Estado:</th>
+                </tr>
+
+                <tr id="materiales" *ngFor="let dato of pedidos">
+                        <td *ngIf="info.rol == 'admin'">{{dato.id_usuario}}</td>
+                        <td>{{dato.id_material}}</td>
+                        <td>{{dato.id_punto_entrega}}</td>
+                        <td>{{dato.Total}} €</td>
+                        <td>{{dato.metodo_pago}}</td>
+                        <td>{{dato.estado}}</td>
+                </tr>
+
+        </table>
+</ng-container>
+
+<div id="carrito" *ngIf="element == true && info.rol == 'cliente'">
+        <img id="foto" src="assets/imagenes/carrito_foto.png">
+        <p>No tienes ningun pedido</p>
+</div>
+
+<div id="carrito" *ngIf="element == true && info.rol == 'admin'">
+        <img id="foto" src="assets/imagenes/carrito_foto.png">
+        <p>No hay ningun pedido</p>
+</div>

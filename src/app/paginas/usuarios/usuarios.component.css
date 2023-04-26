@@ -1,0 +1,77 @@
+form {
+    margin: 0 auto;
+    width: 1000px;
+    height: 1100px;
+    left: 550px;
+    margin-top: 10px;
+    background: rgba(217, 217, 217, 0.25);
+    border-radius: 105px;
+}
+
+#contenido {
+    height: auto;
+}
+
+#logo {
+    text-align: center;
+}
+
+form>div>input {
+    margin-left: 290px;
+
+    margin-bottom: 40px;
+    padding-left: 20px;
+
+    height: 50px;
+    width: 400px;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+
+    border-radius: 10px;
+    border: 1px solid gainsboro;
+
+    background-color: rgb(255, 255, 255, 0.451);
+}
+
+#file {
+    padding-left: 0px;
+
+    height: 29px;
+    width: 422px;
+}
+
+form>div>#error {
+
+    margin-top: -30px;
+    margin-left: 300px;
+
+    text-align: center;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+
+    border-radius: 10px;
+
+    background-color: rgba(221, 62, 62, 0.686);
+    color: rgb(135, 16, 16);
+
+    width: 400px;
+}
+
+#botones>button {
+    width: 230px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 380px;
+    background: #B3B3B3;
+    border: none;
+    border-radius: 19px;
+    font-size: larger;
+}
+
+#botones>button:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+}

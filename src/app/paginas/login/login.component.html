@@ -1,0 +1,43 @@
+<div id="izquierda">
+
+    <h1>Bienvenido a Niké's Arsenal</h1>
+
+    <p>su tienda online de material policial y airsoft de confianza</p>
+
+</div>
+
+<form [formGroup]="loginForm" id="derecha">
+    <div>
+        <img id="logo" alt="Nike Logo" src="assets/imagenes/LogoLogin.png">
+
+        <label id="titulodni">
+            <h4>Ponga el dni:</h4>
+        </label>
+
+        <input id="dni" formControlName="dni" type="text" placeholder="Ponga su dni">
+
+        <div *ngIf="f['dni'].touched && f['dni'].invalid">
+            <p id="error" *ngIf="f['dni'].hasError('required')">
+                Campo requerido
+            </p>
+        </div>
+
+        <label id="titulocontraseña">
+            <h4>Ponga la contraseña:</h4>
+        </label>
+
+        <input id="password" formControlName="password" type="password" placeholder="Ponga su contraseña">
+
+        <div *ngIf="f['password'].touched && f['password'].invalid">
+            <p id="error" *ngIf="f['password'].hasError('required')">
+                Campo requerido
+            </p>
+        </div>
+
+        <button id="login" [disabled]="!loginForm.valid" title="Iniciar Sesion" (click)="login()">
+            INICIAR SESIÓN
+        </button>
+
+        <p id="error" *ngIf="error == true">El usuario y/o la contraseña no existe</p>
+    </div>
+</form>

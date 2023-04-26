@@ -1,0 +1,206 @@
+<div id="menu">
+    <img alt="Nike Logo" src="assets/imagenes/Logo.png">
+    <hr>
+
+    <button *ngIf="info.rol == 'admin'" routerLink="../tienda" routerLinkActive="active" titulo="PEDIDOS"><img
+            src="assets/imagenes/logo_tienda.png">
+        <p>MENU PRINCIPAL</p>
+    </button>
+
+    <!-- Sale una vez el usuario a iniciado sesion -->
+    <button *ngIf="info.rol == 'cliente' || info.rol == 'admin'" routerLink="../perfil" titulo="PERFIL"><img
+            src="assets/imagenes/perfil.png">
+        <p>PERFIL</p>
+    </button>
+
+    <button routerLink="../VerPedidos" routerLinkActive="active" titulo="PEDIDOS"><img
+            src="assets/imagenes/carrito_foto.png">
+        <p>PEDIDOS</p>
+    </button>
+
+
+    <button *ngIf="info.rol == 'admin'" routerLink="../VerPedidos" routerLinkActive="active" titulo="PEDIDOS"><img
+            src="assets/imagenes/carrito_foto.png">
+        <p>PUNTOS DE ENTREGA</p>
+    </button>
+
+</div>
+
+
+<ng-container *ngIf="element1 == true && element2 == true">
+    <table datatable class="row-border hover" id="producto">
+        <tr>
+            <td colspan="7">
+                <button id="botonProductos" (click)="showButton2()">
+                    Registrar un Usuario
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                <hr>
+            </td>
+        </tr>
+        <thead>
+          <tr *ngIf="UsuariosArray.length != 0">
+            <th>ID:</th>
+            <th>Foto:</th>
+            <th>Nombre:</th>
+            <th>Apellidos:</th>
+            <th>Correo:</th>
+            <th>Telefono:</th>
+            <th>DNI:</th>
+            <th>Editar:</th>
+            <th>Borrar:</th>
+          </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngIf="UsuariosArray.length != 0">
+            <tr id="materiales" *ngFor="let dato of UsuariosArray">
+              <td>{{dato.id}}</td>
+              <td><img id="foto" [src]="dato.photo"></td>
+              <td>{{dato.name}}</td>
+              <td>{{dato.lastname}}</td>
+              <td>{{dato.email}}</td>
+              <td>{{dato.phone}}</td>
+              <td>{{dato.dni}}</td>
+              <a href=" " class="btn btn-secondary">
+                  <i class="fas fa-marker"></i>
+              </a>
+              <a href="" class="btn btn-danger">
+                  <i class="far fa-trash-alt"></i>
+              </a>
+            </tr>
+        </ng-container>
+      </tbody>
+
+
+        <div *ngIf="UsuariosArray.length == 0">
+            <b>No hay ningun usuario</b>
+        </div>
+
+    </table>
+</ng-container>
+
+<form [formGroup]="UsuariosForm" *ngIf="element2 == false">
+    <div class="overflow-y-scroll fixWitd">
+        <div>
+            <label>
+                <h4>
+                    Foto del usuario:
+                </h4>
+            </label>
+
+            <input formControlName="photo" type="file" id="file" (change)="onFileChange($event)">
+
+            <div *ngIf="f['photo'].touched && f['photo'].invalid">
+                <p id="error" *ngIf="f['photo'].hasError('required')">
+                    Campo requerido
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <label>
+                <h4>
+                    Nombre del usuario:
+                </h4>
+            </label>
+            <input id="nombre" formControlName="name" type="text" placeholder="Ponga el nombre del cliente:">
+
+            <div *ngIf="f['name'].touched">
+                <p id="error" *ngIf="f['name'].hasError('required')">
+                    Campo requerido
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <label>
+                <h4>
+                    Apellidos del usuario:
+                </h4>
+            </label>
+            <input id="apellidos" formControlName="lastname" type="text" placeholder="Ponga los apellidos del cliente:">
+            <div *ngIf="f['lastname'].touched">
+                <p id="error" *ngIf="f['lastname'].hasError('required')">
+                    Campo requerido
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <label>
+                <h4>
+                    Contraseña del usuario:
+                </h4>
+            </label>
+            <input id="contra" formControlName="password" type="password"
+                placeholder="Ponga la contraseña para el cliente:">
+            <div *ngIf="f['password'].touched">
+                <p id="error" *ngIf="f['password'].hasError('required')">
+                    Campo requerido
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <label>
+                <h4>
+                    Correo del usuario:
+                </h4>
+            </label>
+            <input id="email" formControlName="email" type="email" placeholder="Ponga el correo del cliente:">
+            <div *ngIf="f['email'].touched">
+                <p id="error" *ngIf="f['email'].hasError('required')">
+                    Campo requerido
+                </p>
+                <p id="error" *ngIf="f['email'].hasError('email')">
+                    El correo debe de tener un @
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <label>
+                <h4>
+                    Telefono del usuario:
+                </h4>
+            </label>
+            <input id="tele" formControlName="phone" type="number" placeholder="Ponga el telefono del cliente:">
+            <div *ngIf="f['phone'].touched">
+                <p id="error" *ngIf="f['phone'].hasError('required')">
+                    Campo requerido
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <label>
+                <h4>
+                    Dni del usuario:
+                </h4>
+            </label>
+            <input id="dni" formControlName="dni" type="text" placeholder="Ponga el dni del cliente:">
+            <div *ngIf="f['dni'].touched">
+                <p id="error" *ngIf="f['dni'].hasError('required')">
+                    Campo requerido
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="botones">
+        <button id="registrar" [disabled]="!UsuariosForm.valid" (click)="addUsuario(); MensajeCorrecto()">
+            REGISTRAR USUARIO
+        </button>
+        <button id="volver" (click)="hideButton2()">
+            VOLVER
+        </button>
+    </div>
+
+
+
+</form>

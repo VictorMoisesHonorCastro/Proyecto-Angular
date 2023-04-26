@@ -1,0 +1,280 @@
+<main>
+  <header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <div class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img class="bi me-2" width="50" height="50" role="img" src="assets/imagenes/Logo.png" alt="">
+        </div>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
+        </ul>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+            aria-label="Search">
+        </form>
+        <div class="text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img src="{{info.photo}}" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+
+          <ul class="dropdown-menu text-small">
+
+            <li>
+              <a class="dropdown-item" href="../tienda">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" (click)="showButton1()">
+                Categorias
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" (click)="hideButton1()">
+                Productos
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="../perfil/">
+                Perfil
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item" (click)="logout()">
+                Log out
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </header>
+</main>
+
+<ng-container *ngIf="element1 == true && element2 == true">
+  <table id="producto">
+    <tr>
+      <td colspan="7">
+        <button id="botonProductos" (click)="showButton2()">
+          Crear un producto
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="7">
+        <hr>
+      </td>
+    </tr>
+    <tr *ngIf="materialesfiltrados.length != 0">
+      <th>Foto:</th>
+      <th>Nombre:</th>
+      <th>Marca:</th>
+      <th>Descripción:</th>
+      <th>Cantidad:</th>
+      <th>Precio:</th>
+      <th>Categoria:</th>
+    </tr>
+
+    <ng-container *ngIf="materialesfiltrados.length != 0">
+      <tr id="materiales" *ngFor="let dato of materialesfiltrados">
+        <td><img id="foto" [src]="dato.img"></td>
+        <td>{{dato.nombre}}</td>
+        <td>{{dato.marca}}</td>
+        <td>{{dato.descripcion}}</td>
+        <td>{{dato.cantidad}}</td>
+        <td>{{dato.precio}} €</td>
+        <td>{{dato.id_categoria}}</td>
+      </tr>
+    </ng-container>
+
+    <div *ngIf="materialesfiltrados.length == 0">
+      <b>No hay ningun producto</b>
+    </div>
+
+  </table>
+</ng-container>
+
+<ng-container *ngIf="element1 == false && element3 == true">
+  <table id="categoria">
+    <tr>
+      <td colspan="3">
+        <button id="botonCategorias" (click)="showButton3()">Crear una categoria</button>
+      </td>
+    </tr>
+
+    <tr>
+
+      <td colspan="3">
+
+        <hr>
+
+      </td>
+
+    </tr>
+
+    <tr *ngIf="categoriasfiltradas.length != 0">
+      <th>Nombre:</th>
+      <th>Descripción:</th>
+      <th>Tipo:</th>
+    </tr>
+
+    <ng-container *ngIf="categoriasfiltradas.length != 0">
+      <tr *ngFor="let dato of categoriasfiltradas">
+        <td>{{dato.nombre}}</td>
+        <td>{{dato.descripcion}}</td>
+        <td>{{dato.tipo}}</td>
+      </tr>
+    </ng-container>
+
+    <div *ngIf="categoriasfiltradas.length == 0">
+      <b>No hay ninguna categoria</b>
+    </div>
+
+  </table>
+</ng-container>
+
+<form id="crearProducto" *ngIf="element2 == false" [formGroup]="productosForm">
+  <div id="titulo">
+    <h1>
+      <b>CREAR PRODUCTOS</b>
+    </h1>
+  </div>
+
+  <div>
+    <input formControlName="img" type="file" id="file" (change)="onFileChange($event)">
+    <div *ngIf="p['img'].touched && p['img'].invalid">
+
+      <p id="error" *ngIf="p['img'].hasError('required')">
+        Campo requerido
+      </p>
+
+    </div>
+  </div>
+
+  <div>
+    <input formControlName="nombre" type="text" placeholder="Ponga el nombre:">
+    <div *ngIf="p['nombre'].touched && p['nombre'].invalid">
+
+      <p id="error" *ngIf="p['nombre'].hasError('required')">
+        Campo requerido
+      </p>
+    </div>
+  </div>
+
+  <div>
+
+    <input formControlName="marca" type="text" placeholder="Ponga la marca:">
+    <div *ngIf="p['marca'].touched && p['marca'].invalid">
+
+      <p id="error" *ngIf="p['marca'].hasError('required')">
+        Campo requerido
+      </p>
+    </div>
+  </div>
+
+  <div>
+
+    <input formControlName="descripcion" type="text" placeholder="Ponga una descripción:">
+    <div *ngIf="p['descripcion'].touched && p['descripcion'].invalid">
+
+      <p id="error" *ngIf="p['descripcion'].hasError('required')">
+        Campo requerido
+      </p>
+    </div>
+  </div>
+
+  <div>
+
+    <input formControlName="cantidad" type="number" placeholder="Ponga una cantidad:">
+    <div *ngIf="p['cantidad'].touched && p['cantidad'].invalid">
+
+      <p id="error" *ngIf="p['cantidad'].hasError('required')">
+        Campo requerido
+      </p>
+    </div>
+  </div>
+
+  <div>
+
+    <input formControlName="precio" type="text" placeholder="Ponga un precio:">
+    <div *ngIf="p['precio'].touched && p['precio'].invalid">
+
+      <p id="error" *ngIf="p['precio'].hasError('required')">
+        Campo requerido
+      </p>
+
+    </div>
+  </div>
+
+  <div>
+
+    <input formControlName="id_categoria" type="text" placeholder="Ponga la id de la categoria:">
+    <div *ngIf="p['id_categoria'].touched && p['id_categoria'].invalid">
+
+      <p id="error" *ngIf="p['id_categoria'].hasError('required')">
+        Campo vacio
+      </p>
+
+    </div>
+  </div>
+
+  <div id="botones">
+    <button id="registrar" [disabled]="!productosForm.valid" (click)="addProducto()">
+      CREAR
+    </button>
+    <button id="volver" (click)="hideButton2()">VOLVER</button>
+  </div>
+</form>
+
+<form id="crearCategoria" *ngIf="element3 == false" [formGroup]="categoriasForm">
+  <div id="titulo">
+    <h1>
+      <b>CREAR CATEGORIAS</b>
+    </h1>
+  </div>
+
+  <div>
+    <input formControlName="nombre" type="text" placeholder="Ponga el nombre:">
+    <div *ngIf="c['nombre'].touched && c['nombre'].invalid">
+
+      <p id="error" *ngIf="c['nombre'].hasError('required')">Campo vacio</p>
+
+    </div>
+  </div>
+
+  <div>
+    <input formControlName="descripcion" type="text" placeholder="Ponga una descripción:">
+    <div *ngIf="c['descripcion'].touched && c['descripcion'].invalid">
+
+      <p id="error" *ngIf="c['descripcion'].hasError('required')">Campo vacio</p>
+
+    </div>
+  </div>
+
+  <div>
+    <input formControlName="tipo" type="text" placeholder="Ponga el tipo:">
+    <div *ngIf="c['tipo'].touched && c['tipo'].invalid">
+
+      <p id="error" *ngIf="c['tipo'].hasError('required')">Campo vacio</p>
+    
+    </div>
+  </div>
+
+  <div id="botones">
+    <button id="registrar" [disabled]="!categoriasForm.valid" (click)="addCategoria()">
+      CREAR
+    </button>
+    <button id="volver" (click)="hideButton3()">VOLVER</button>
+  </div>
+</form>

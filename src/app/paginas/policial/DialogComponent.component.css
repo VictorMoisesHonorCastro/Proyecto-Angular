@@ -1,0 +1,49 @@
+body {
+
+    width: '300px';
+
+    background-color: rgb(255, 255, 255, 0.451);
+
+}
+
+#Si {
+
+    background-color: #3072ed;
+    color: white;
+
+    border: none;
+    border-radius: 2px;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#Si:hover {
+
+    background-color: #6593e8;
+
+    cursor: pointer;
+
+}
+
+#No {
+
+    background-color: rgb(23, 168, 23);
+    color: white;
+
+    border-radius: 2px;
+    border: none;
+
+    margin-left: 20px;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#No:hover {
+
+    background-color: rgb(151, 213, 151);
+
+    cursor: pointer;
+
+}

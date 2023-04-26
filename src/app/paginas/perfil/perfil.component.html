@@ -1,0 +1,34 @@
+<div id="menu">
+    <img alt="Nike Logo" src="assets/imagenes/Logo.png">
+    <hr>
+
+    <button routerLink="../tienda" routerLinkActive="active" titulo="TIENDA">
+        <img src="assets/imagenes/logo_tienda.png">
+        <p>MENU PRINCIPAL</p>
+    </button>
+
+    <!-- Saldra si el usuario que a iniciado sesion es un cliente -->
+    <button *ngIf="info.rol == 'cliente'" routerLink="../carrito" titulo="CARRITO">
+        <img src="assets/imagenes/carrito.png">
+        <p>CARRITO</p>
+    </button>
+
+        <!-- Saldra si el usuario a iniciado sesion y replacara el botone de iniciar sesion -->
+        <button title="LOGOUT" (click)="logout()">
+            <img src="assets/imagenes/logout.png">
+            <p>LOG OUT</p>
+        </button>
+
+</div>
+
+<div id="perfil">
+    <img id="foto" src="{{info.photo}}">
+    <p id="nombre"><b>Nombre: </b>{{info.name}}</p>
+    <p id="apellidos"><b>Apellidos: </b>{{info.lastname}}</p>
+    <hr id="hr1">
+    <p id="correo"><b>Correo: </b>{{info.email}}</p>
+    <hr id="hr2">
+    <p id="telefono"><b>Telefono: </b>{{info.phone}}</p>
+    <hr id="hr3">
+    <p id="DNI"><b>DNI: </b>{{info.dni}}</p>
+</div>

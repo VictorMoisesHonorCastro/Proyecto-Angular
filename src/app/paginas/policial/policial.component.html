@@ -1,0 +1,78 @@
+<main>
+  <header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <div class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img class="bi me-2" width="50" height="50" role="img" src="assets/imagenes/Logo.png" alt="">
+        </div>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          
+        </ul>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+            aria-label="Search">
+        </form>
+        <div class="text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img src="{{info.photo}}" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li>
+              <a class="dropdown-item" href="../tienda">
+                Home
+              </a>
+            </li>
+            <li *ngIf="info.rol == 'cliente'">
+              <a class="dropdown-item" href="../carrito">
+                Carrito
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="../perfil/">
+                Perfil
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="logout()">
+                Log out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+</main>
+
+<ng-container>
+  <table id="producto">
+    <tr *ngIf="materialesfiltrados.length != 0">
+      <th>Foto:</th>
+      <th>Nombre:</th>
+      <th>Marca:</th>
+      <th>Descripción:</th>
+      <th>Precio:</th>
+    </tr>
+
+    <ng-container *ngIf="materialesfiltrados.length != 0">
+      <tr id="materiales" *ngFor="let dato of materialesfiltrados">
+        <td><img id="foto" [src]="dato.img"></td>
+        <td>{{dato.nombre}}</td>
+        <td>{{dato.marca}}</td>
+        <td>{{dato.descripcion}}</td>
+        <td>{{dato.precio}} €</td>
+        <td><button id="añadirCarrito" (click)="openDialog(); Carrito($event, dato.id, dato.precio)">Añadir al
+            Carrito</button></td>
+      </tr>
+    </ng-container>
+
+    <div *ngIf="materialesfiltrados.length == 0">
+      <b>No hay ningun producto</b>
+    </div>
+
+  </table>
+</ng-container>

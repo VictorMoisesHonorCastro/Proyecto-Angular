@@ -1,0 +1,141 @@
+#menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 300px;
+    background: rgba(217, 217, 217, 0.25);
+    border-bottom-right-radius: 10px;
+}
+
+#menu>img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-left: 45px;
+}
+
+#menu>hr {
+    position: absolute;
+    top: 180px;
+    left: 23px;
+    width: 250px;
+}
+
+#menu>button {
+    border: none;
+    width: 280px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 9px;
+    margin-bottom: 10px;
+    background: #B3B3B3;
+}
+
+#menu>button>p{
+    margin-top: 11px;
+}
+
+#menu>button:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+}
+
+#menu>button>img {
+    width: 50px;
+    float: left;
+    margin-left: 5px;
+}
+
+#perfil {
+    position: absolute;
+    width: 1340px;
+    height: 740px;
+    left: 410px;
+    top: 90px;
+
+    background: rgba(217, 217, 217, 0.25);
+    border-radius: 105px;
+}
+
+#perfil>#foto {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 100px;
+    top: 40px;
+
+    border-radius: 100%;
+}
+
+#perfil>#nombre {
+    position: absolute;
+    width: 500px;
+    left: 400px;
+    top: 120px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#perfil>#apellidos {
+    position: absolute;
+    width: 500px;
+    left: 800px;
+    top: 120px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#perfil>#hr1 {
+    position: absolute;
+    top: 250px;
+    left: 23px;
+    width: 1290px;
+}
+
+#perfil>#hr2 {
+    position: absolute;
+    top: 400px;
+    left: 23px;
+    width: 1290px;
+}
+
+#perfil>#hr3 {
+    position: absolute;
+    top: 550px;
+    left: 23px;
+    width: 1290px;
+}
+
+#perfil>#correo {
+    position: absolute;
+    width: 500px;
+    left: 480px;
+    top: 315px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#perfil>#telefono {
+    position: absolute;
+    width: 500px;
+    left: 480px;
+    top: 465px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#perfil>#DNI {
+    position: absolute;
+    width: 500px;
+    left: 478px;
+    top: 630px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

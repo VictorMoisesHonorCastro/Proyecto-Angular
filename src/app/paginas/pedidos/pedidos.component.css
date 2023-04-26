@@ -1,0 +1,57 @@
+form {
+
+    text-align: center;
+
+    width: 1000px;
+    height: 500px;
+
+    margin-left: 300px;
+    margin-top: 200px;
+
+    background: rgba(217, 217, 217, 0.25);
+
+    border-radius: 105px;
+    
+}
+
+#pago {
+
+    width: 230px;
+    height: 50px;
+
+    font-size: larger;
+
+    background: #B3B3B3;
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+
+#entrega {
+
+    width: 230px;
+    height: 50px;
+
+    font-size: larger;
+
+    background: #B3B3B3;
+
+    margin-bottom: 100px;
+
+}
+
+button {
+    width: 230px;
+    height: 50px;
+    background: #B3B3B3;
+    border: none;
+    border-radius: 19px;
+    font-size: larger;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+}

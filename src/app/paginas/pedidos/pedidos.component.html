@@ -1,0 +1,33 @@
+<form>
+        <div>
+                <select id="pago" #pago (change)="confirmarPago(pago)">
+                        <option>--Metodos de pago--</option>
+                        <option>Tarjeta de credito</option>
+                        <option>En efectivo</option>
+                </select>
+        </div>
+
+        <div>
+
+                <select id="entrega" #ubicacion (change)="confirmarUbicacion(ubicacion)">
+                        <option>--Puntos de recojida--</option>
+                        <option value="{{dato.id}}" *ngFor="let dato of puntos">
+                                {{dato.tienda}} -
+                                {{dato.provincia}} -
+                                {{dato.cp}} -
+                                {{dato.direccion}}
+                        </option>
+                </select>
+        </div>
+
+        <div>
+                <button id="confirmar" [disabled]="element1 == false || element2 == false" (click)="addPedido(pago, ubicacion)">
+                        Confirmar Entrega
+                </button>
+
+                <button routerLink="../carrito">
+                        Cancelar
+                </button>
+        </div>
+
+</form>

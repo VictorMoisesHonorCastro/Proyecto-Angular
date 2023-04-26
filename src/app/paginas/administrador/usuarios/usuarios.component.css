@@ -1,0 +1,428 @@
+#menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 300px;
+  background: rgba(217, 217, 217, 0.25);
+  border-bottom-right-radius: 10px;
+}
+
+#menu>img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-left: 45px;
+}
+
+#menu>hr {
+  position: absolute;
+  top: 180px;
+  left: 23px;
+  width: 250px;
+}
+
+#menu>button {
+  border: none;
+  width: 280px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 9px;
+  margin-bottom: 10px;
+  padding-top: -20px;
+  background: #B3B3B3;
+}
+
+#menu>button>p {
+  margin-top: 11px;
+}
+
+#menu>button:hover {
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+}
+
+#menu>button>img {
+  width: 50px;
+  float: left;
+  margin-left: 5px;
+}
+
+form {
+  position: absolute;
+
+  margin: 0 auto;
+
+  width: 1000px;
+
+  left: 550px;
+
+  background: rgba(217, 217, 217, 0.25);
+  margin-top: 150px;
+
+  border-radius: 10px;
+}
+
+#contenido {
+  height: auto;
+}
+
+#logo {
+  text-align: center;
+}
+
+form>div>div>label {
+  padding-left: 100px;
+
+  color: white;
+}
+
+form>div>div>input {
+
+  margin-bottom: 40px;
+  padding-left: 20px;
+
+  height: 50px;
+  width: 400px;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+
+  border-radius: 10px;
+  border: 1px solid gainsboro;
+
+  background-color: rgb(255, 255, 255, 0.451);
+}
+
+#file {
+  padding-top: 5px;
+
+  margin-left: 150px;
+
+  height: 50px;
+  width: 400px;
+}
+
+#nombre {
+  margin-left: 110px;
+
+}
+
+#apellidos {
+  margin-left: 100px;
+
+}
+
+#contra {
+  margin-left: 80px;
+
+}
+
+#email {
+  margin-left: 130px;
+
+}
+
+#tele {
+  margin-left: 110px;
+
+}
+
+#dni {
+  margin-left: 170px;
+
+}
+
+form>div>div>div>#error {
+
+  margin-top: -25px;
+  margin-left: 480px;
+
+  padding-bottom: 30px;
+
+  text-align: center;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+
+  border-radius: 10px;
+
+  background-color: rgba(221, 62, 62, 0.686);
+  color: white;
+
+  width: 300px;
+  height: 25px;
+
+  font-size: 20px;
+}
+
+#botones>button {
+  width: 230px;
+  height: 50px;
+  margin-bottom: 10px;
+  margin-left: 380px;
+  background: #B3B3B3;
+  border: none;
+  border-radius: 19px;
+  font-size: larger;
+}
+
+#botones>button:hover {
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+}
+
+
+#producto {
+  position: absolute;
+
+  text-align: center;
+
+  margin-left: 500px;
+  margin-top: 200px;
+
+  width: 1199px;
+  height: auto;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  background-color: rgba(255, 255, 255, 0.548);
+
+  border-radius: 10px;
+}
+
+#producto>tr {
+  color: black;
+
+  font-size: 20px;
+}
+
+#foto {
+  height: 100px;
+  width: 100px;
+}
+
+#categoria {
+  position: absolute;
+
+  text-align: center;
+
+  margin-left: 632px;
+  margin-top: 200px;
+
+  width: 599px;
+  height: auto;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-radius: 10px;
+
+  background-color: rgb(255, 255, 255, 0.451);
+}
+
+#botonProductos {
+  margin-top: 20px;
+  margin-left: 899px;
+
+  width: 200px;
+  height: 40px;
+
+  padding-bottom: 5px;
+
+  background: #B3B3B3;
+
+  border: none;
+  border-radius: 19px;
+}
+
+#botonCategorias {
+  margin-top: 20px;
+  margin-left: 300px;
+
+  width: 200px;
+  height: 30px;
+
+  background: #B3B3B3;
+
+  border: none;
+  border-radius: 19px;
+}
+
+#crearProducto {
+  margin: 0 auto;
+
+  width: 1000px;
+  height: 1000px;
+
+  left: 550px;
+
+  background: rgba(217, 217, 217, 0.25);
+}
+
+#crearCategoria {
+  margin: 0 auto;
+
+  width: 1000px;
+  height: 600px;
+
+  left: 550px;
+
+  background: rgba(217, 217, 217, 0.25);
+}
+
+#contenido {
+  height: auto;
+}
+
+#titulo {
+  text-align: center;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#crearProducto>div>input {
+  margin-left: 290px;
+
+  margin-bottom: 40px;
+  padding-left: 20px;
+
+  height: 50px;
+  width: 400px;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+
+  border-radius: 10px;
+  border: 1px solid gainsboro;
+
+  background-color: rgb(255, 255, 255, 0.451);
+}
+
+#crearCategoria>div>input {
+  margin-left: 290px;
+
+  margin-bottom: 40px;
+  padding-left: 20px;
+
+  height: 50px;
+  width: 400px;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+
+  border-radius: 10px;
+  border: 1px solid gainsboro;
+
+  background-color: rgb(255, 255, 255, 0.451);
+}
+
+#file {
+  padding-left: 0px;
+  padding-top: 5px;
+
+  height: 50px;
+  width: 400px;
+}
+
+#crearProducto>div>div>#error {
+
+  margin-top: -25px;
+  margin-left: 340px;
+
+  text-align: center;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+
+  border-radius: 10px;
+
+  background-color: rgba(221, 62, 62, 0.686);
+  color: rgb(135, 16, 16);
+
+  width: 300px;
+}
+
+#crearCategoria>div>div>#error {
+
+  margin-top: -25px;
+  margin-left: 340px;
+
+  text-align: center;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+
+  border-radius: 10px;
+
+  background-color: rgba(221, 62, 62, 0.686);
+  color: rgb(135, 16, 16);
+
+  width: 300px;
+}
+
+#botones>button {
+  width: 230px;
+  height: 50px;
+
+  margin-bottom: 10px;
+  margin-left: 380px;
+
+  background: #B3B3B3;
+
+  border: none;
+  border-radius: 19px;
+
+  font-size: larger;
+}
+
+#botones>button:hover {
+  cursor: pointer;
+
+  background-color: gray;
+  color: white;
+}
+
+#Editar {
+  background-color: #3072ed;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  border-radius: 5px;
+
+  border: none;
+}
+
+#Editar:hover {
+  background-color: #6593e8;
+
+  cursor: pointer;
+}
+
+#Borrar {
+  background-color: #ea1818;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 5px;
+
+  border: none;
+
+}
+
+#Borrar:hover {
+  background-color: #e43232;
+
+  cursor: pointer;
+}
+
+.fixWitd{
+  height: 500px;
+}
+
+hr{
+  color: black;
+  border: 3px solid ;
+}
