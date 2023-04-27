@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-//import { DataTablesModule } from "angular-datatables";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './paginas/login/login.component';
@@ -9,6 +8,8 @@ import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { PaginasModule } from './paginas/paginas.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DataTablesModule } from "angular-datatables";
+
 
 @NgModule({
   declarations: [
@@ -24,7 +25,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     PaginasModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    //DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -423,6 +423,6 @@ form>div>div>div>#error {
 }
 
 hr{
-  color: black;
+  color: rgb(0, 0, 0);
   border: 3px solid ;
 }
